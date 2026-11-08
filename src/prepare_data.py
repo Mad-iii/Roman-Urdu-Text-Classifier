@@ -1,9 +1,9 @@
-import pandas as pd
+﻿import pandas as pd
 from sklearn.model_selection import train_test_split
 
 SEED = 42
 
-df = pd.read_csv("data/raw.csv")
+df = pd.read_csv("data/raw.csv", keep_default_na=False)
 df["text"] = df["text"].astype(str).str.strip()
 df["label"] = df["label"].astype(str).str.strip().str.lower()
 df = df[df["label"].isin(["negative", "neutral", "positive"])]

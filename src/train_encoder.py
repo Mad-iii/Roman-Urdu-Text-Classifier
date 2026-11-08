@@ -1,4 +1,4 @@
-import numpy as np, pandas as pd, mlflow
+﻿import numpy as np, pandas as pd, mlflow
 from datasets import Dataset
 from sklearn.metrics import f1_score
 from transformers import (AutoTokenizer, AutoModelForSequenceClassification,
@@ -9,7 +9,7 @@ BASE = "xlm-roberta-base"
 tok = AutoTokenizer.from_pretrained(BASE)
 
 def load(n):
-    d = pd.read_csv(f"data/{n}.csv"); d["labels"] = d.label.map(L2I)
+    d = pd.read_csv(f"data/{n}.csv", keep_default_na=False); d["labels"] = d.label.map(L2I)
     return Dataset.from_pandas(d[["text", "labels"]]).map(
         lambda b: tok(b["text"], truncation=True, max_length=128), batched=True)
 

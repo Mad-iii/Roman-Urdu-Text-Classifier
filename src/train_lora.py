@@ -1,4 +1,4 @@
-import pandas as pd, mlflow
+﻿import pandas as pd, mlflow
 from datasets import Dataset
 from sklearn.metrics import f1_score
 from peft import LoraConfig, get_peft_model
@@ -11,7 +11,7 @@ tok = AutoTokenizer.from_pretrained(BASE)
 if tok.pad_token is None: tok.pad_token = tok.eos_token
 
 def load(n):
-    d = pd.read_csv(f"data/{n}.csv"); d["labels"] = d.label.map(L2I)
+    d = pd.read_csv(f"data/{n}.csv", keep_default_na=False); d["labels"] = d.label.map(L2I)
     return Dataset.from_pandas(d[["text", "labels"]]).map(
         lambda b: tok(b["text"], truncation=True, max_length=128), batched=True)
 

@@ -1,4 +1,4 @@
-import sys, time, torch, pandas as pd
+﻿import sys, time, torch, pandas as pd
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from common import summarize, L2I, LABELS
 
@@ -18,7 +18,7 @@ else:
     model = AutoModelForSequenceClassification.from_pretrained(path)
 model.eval().to("cpu")
 
-te = pd.read_csv("data/test.csv")
+te = pd.read_csv("data/test.csv", keep_default_na=False)
 preds, lat = [], []
 with torch.no_grad():
     for t in te.text:

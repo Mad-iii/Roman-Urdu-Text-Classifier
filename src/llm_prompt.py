@@ -1,4 +1,4 @@
-import time, random, pandas as pd
+﻿import time, random, pandas as pd
 from concurrent.futures import ThreadPoolExecutor
 import anthropic
 from common import summarize, L2I, LABELS
@@ -6,7 +6,7 @@ from common import summarize, L2I, LABELS
 MODEL = "claude-haiku-5-5"
 PRICE_IN, PRICE_OUT = 0.0, 0.0  # USD per 1M tokens: fill from the current pricing page
 
-tr, te = pd.read_csv("data/train.csv"), pd.read_csv("data/test.csv")
+tr, te = pd.read_csv("data/train.csv", keep_default_na=False), pd.read_csv("data/test.csv", keep_default_na=False)
 random.seed(0)
 shots = pd.concat([tr[tr.label == l].sample(3, random_state=0) for l in LABELS]).sample(frac=1, random_state=0)
 examples = "\n".join(f"Message: {r.text}\nLabel: {r.label}" for r in shots.itertuples())
