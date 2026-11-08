@@ -1,0 +1,7 @@
+{
+  "approach": "tfidf_lr",
+  "macro_f1": 0.6553,
+  "latency_p50_ms": 1.1,
+  "latency_p95_ms": 1.4,
+  "cost_per_1k_usd": 2e-05
+}
