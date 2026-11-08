@@ -5,3 +5,4 @@ models/
 mlruns/
 results/*_errors.csv
 .env
+results/llm_cache_*.jsonl

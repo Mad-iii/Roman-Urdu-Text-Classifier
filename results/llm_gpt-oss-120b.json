@@ -1,0 +1,10 @@
+{
+  "approach": "llm_gpt-oss-120b",
+  "macro_f1": 0.7151,
+  "latency_p50_ms": 272.2,
+  "latency_p95_ms": 666.5,
+  "cost_per_1k_usd": 0.0,
+  "n_evaluated": 300,
+  "unparseable": 0,
+  "free_tier": true
+}
