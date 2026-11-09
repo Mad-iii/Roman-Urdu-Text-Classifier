@@ -1,4 +1,4 @@
-﻿import sys, time, torch, pandas as pd
+import sys, time, torch, pandas as pd
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from common import summarize, L2I, LABELS
 

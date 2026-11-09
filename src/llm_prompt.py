@@ -1,4 +1,4 @@
-﻿import os, time, json
+import os, time, json
 import pandas as pd
 from openai import OpenAI
 from common import summarize, L2I, LABELS

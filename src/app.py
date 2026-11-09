@@ -1,4 +1,4 @@
-﻿import os, torch
+import os, torch
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
 from transformers import AutoTokenizer, AutoModelForSequenceClassification

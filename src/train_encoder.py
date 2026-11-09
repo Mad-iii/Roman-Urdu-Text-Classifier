@@ -1,4 +1,4 @@
-﻿import numpy as np, pandas as pd, mlflow
+import numpy as np, pandas as pd, mlflow
 from datasets import Dataset
 from sklearn.metrics import f1_score
 from transformers import (AutoTokenizer, AutoModelForSequenceClassification,

@@ -1,4 +1,4 @@
-﻿import pandas as pd
+import pandas as pd
 
 def norm(s): return s.str.lower().str.replace(r"\s+", " ", regex=True)
 
