@@ -26,7 +26,7 @@ model.print_trainable_parameters()
 
 args = TrainingArguments(
     output_dir="runs/lora", num_train_epochs=3, learning_rate=2e-4,
-    per_device_train_batch_size=16, per_device_eval_batch_size=32, warmup_ratio=0.05,
+    per_device_train_batch_size=16, per_device_eval_batch_size=32, warmup_steps=0.05,
     eval_strategy="epoch", save_strategy="epoch", load_best_model_at_end=True,
     metric_for_best_model="macro_f1", fp16=True, report_to="mlflow", seed=42,
     gradient_accumulation_steps=2, save_total_limit=1,

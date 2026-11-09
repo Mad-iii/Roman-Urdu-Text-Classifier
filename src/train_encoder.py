@@ -22,7 +22,7 @@ def metrics(p):
 
 args = TrainingArguments(
     output_dir="runs/encoder", num_train_epochs=4, learning_rate=2e-5,
-    per_device_train_batch_size=32, per_device_eval_batch_size=64, warmup_ratio=0.1,
+    per_device_train_batch_size=32, per_device_eval_batch_size=64, warmup_steps=0.1,
     eval_strategy="epoch", save_strategy="epoch", load_best_model_at_end=True,
     metric_for_best_model="macro_f1", fp16=True, report_to="mlflow", seed=42,
     save_total_limit=1,
